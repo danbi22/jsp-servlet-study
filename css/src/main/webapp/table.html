@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charset="UTF-8" />
+				<title>CSS</title>
+                <style>
+                        table#tbl-member, table#tbl-member th, table#tbl-member td {
+                                text-align: center;
+                                border: 2px solid gray;
+                                margin: 10px;
+                                padding: 10px;
+                                border-collapse: collapse; /* 선들이 곂치는 부분을 하나로 합친다. */
+                        }
+                        
+                        table#tbl-post {
+                                width: 100%;
+                                border-collapse: collapse;
+                        }   
+                        
+                        table#tbl-post, table#tbl-post th, table#tbl-post td {
+                                border-bottom: 1px solid gray;
+                                padding: 7px;
+                        }
+                        
+                        table#tbl-post th {
+                                padding: 4px;
+                                background-color: MediumSeaGreen;
+                                color: white;
+                                text-align: left;
+                        }
+                        
+                        table#tbl-post caption {
+                                padding: 1px; 
+                        }
+                        
+                        /* 짝수 번째 있는 tr */
+                        table#tbl-post > tbody > tr:nth-child(even) {
+                                background: #eeeeee;
+                        }
+                        
+                        table#tbl-post > tbody > tr:hover {
+                                background-color: darkgray;
+                        }
+                        
+                        /*
+                        CSS display 속성(property)
+                        1. block: <div>, <p>, <h1>, <header>, <ul>, <li>, <table>, <main>, <footer>, <nav>, <aside>, ...
+                            - 항상 새 줄에(이전 요소의 아래쪽에) 배치.
+                            - width(가로), height(세로)를 변경할 수 있음.
+                            - margin, padding을 변경할 수 있음.
+                        2. inline: <span>, <strong>, <em>, <a>, ...
+                            - 같은 줄(이전 요소의 오른쪽)에 배치.
+                            - width, height를 변경할 수 없음.
+                            - margin, padding을 변경할 수 있음.
+                        3. inline-block: <img>
+                            - inline 속성: 같은 줄(이전 요소 오른쪽)에 배치
+                            - block 속성: width, height를 변경할 수있음.
+                        4. none: 
+                        */
+                </style>
+		</head>
+		<body>
+				<h1>Table Style</h1>
+                
+                <table id="tbl-member">
+                        <caption>회원 정보</caption>
+                        <thead>
+                                <tr>
+                                        <th>아이디</th>                                
+                                        <th>비밀번호</th>                                
+                                        <th>이메일</th>                                
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                </tr>
+                                <tr>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                </tr>
+                                <tr>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                </tr>
+                        </tbody>
+                </table>
+                
+                <hr />
+                
+                <table id="tbl-post">
+                        <caption>자유 게시판</caption>
+                        <thead>
+                                <tr>
+                                        <th>번호</th>                                
+                                        <th>제목</th>                                
+                                        <th>작성자</th>                                
+                                        <th>작성날짜</th>                                
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>1</td>
+                                        <td>css</td>
+                                        <td>admin</td>
+                                        <td>2023-04-02</td>
+                                </tr>
+                                <tr>
+                                        <td>2</td>
+                                        <td>에코프로 익절 당한 썰푼다</td>
+                                        <td>김다훈</td>
+                                        <td>2023-04-23</td>
+                                </tr>
+                                <tr>
+                                        <td>3</td>
+                                        <td>test1</td>
+                                        <td>유다한</td>
+                                        <td>2023-04-13</td>
+                                </tr>
+                                <tr>
+                                        <td>4</td>
+                                        <td>곧 점심시간입니다.</td>
+                                        <td>오쌤</td>
+                                        <td>2023-04-21</td>
+                                </tr>
+                                <tr>
+                                        <td>5</td>
+                                        <td>묘비스 언제 오르누</td>
+                                        <td>다한</td>
+                                        <td>2023-04-15</td>
+                                </tr>
+                        </tbody>
+                </table>
+		</body>
+</html>

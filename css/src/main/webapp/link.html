@@ -17,8 +17,35 @@
                         */
                         
                         a#link-naver {
+                                border: 1px solid lightgray;
                                 color: black; /* 글자색 */
-                                
+                                text-decoration: none; /* 밑줄 제거 */
+                                padding: 3px;
+                        }
+                        
+                        /* 마우스가 a 태그 중에서 id 값이 link-naver인 요소 위에 있을 때 어떠한 설정을 하겠다.*/
+                        a#link-naver:hover {
+                                color: blue;
+                        }
+                        
+                        /* 마우스가 a 태그 중에서 id가 link-naver인 요소를 누르고 있을 때 어떠한 설정을 하겠다.*/
+                        a#link-naver:active {
+                                color: red;
+                        }
+                        
+                        a#link-daum {
+                                display: inline-block;
+                                text-decoration: none;
+                                background-color: Dodgerblue;
+                                color: white;
+                                font-weight: bold;
+                                padding: 4px 8px; /* top -> right -> bottom -> left */
+                                width: 40px; /* 가로 크기 */
+                                text-align: center; /* 텍스트 가운데 정렬 */
+                        }
+                        
+                        a#link-daum:hover {
+                                background: SlateBlue;
                         }
                 </style>
 		</head>
@@ -28,6 +55,9 @@
                 
                 <a id="link-naver" href="https://www.naver.com/">네이버</a>
                 
+                <h2>Link Button</h2>
+                
+                <a id="link-daum" href="https://www.daum.net/">다음</a>
 				
 		</body>
 </html>
