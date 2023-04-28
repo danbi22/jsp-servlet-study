@@ -9,7 +9,21 @@
                 
                 <input type="number" id="numberInput" placeholder="정수 입력" />
                 <button onclick="checkEven()">짝수? 홀수?</button>
-                <div id="result">결과</div>                
+                <button onclick="checkPositive()">양수? 음수?</button>
+                <button onclick="checkEven2()">삼항 연산자</button>
+                <div id="result">결과</div>
+                
+                <hr />
+                
+                <input type="number" id="firstNum" placeholder="숫자 입력" />            
+                <input type="number" id="secondNum" placeholder="숫자 입력" />
+                <button onclick="plus()">+</button>            
+                <button onclick="minus()">-</button>            
+                <button onclick="multy()">*</button>            
+                <button onclick="divide()">/</button>
+                <div id="result1">결과</div>       
+                
+                <hr />    
                 <script>
                 // id="numberInput"인 html element를 찾음
                 const numberInput = document.getElementById('numberInput');
@@ -39,9 +53,37 @@
                 		result.innerHTML = number + ': 짝수';
                 	}
                 }
+               
+                function checkPositive() {
+                	const number = numberInput.value;
+                	if (number > 0) {
+                		   result.innerHTML = number + ': 양수';
+                	} else if (number < 0) {
+                		   result.innerHTML = number + ': 음수';
+                	} else {
+                		   result.innerHTML = number + ': 0';
+                	}
+                }
+                
+                const firstNum = document.getElementById('firstNum'); // id가 firstNum인 html element를 자바스크립트 변수
+                const secondNum = document.getElementById('secondNum'); // id가 secondNum인 html element를 자바스크립트 변수 
+                const result2 = document.getElementById('result1')
                 
                 
+				function plus() {
+				const firstNum1 = firstNum.value;
+				const secondNum1 = firstNum.value;
+					result2.innerHTML = firstNum1 + '+' + secondNum1 + '=' + (parseInt(firstNum1) + parseInt(secondNum1));
+				}
                 
+                function checkEven2() {
+                	const number = numberInput.value;
+                	// 삼항 연산자
+                	// (조건식) ? (참일 때 값) : (거짓일 때 값)
+                	// (조건식1) ? (참일 때 값) : ((조건식2) ? (참일 때 값) : (거짓일 때 값))
+                	result.innerHTML = (number % 2) ? '홀수' : '짝수';
+                }
+				
                 /* JavaScript의 변수(variable) 선언 방법:
                     - 자바스크립트는 변수를 선언할 때 변수 타입을 명시하지 않음!
                     - 변수의 타입은 문장이 실행될 때(변수에 값이 할당될 때) 결정됨.
