@@ -67,15 +67,23 @@
          };
          
          this.mean = function () {
-             return sum() / 3;
+             return this.sum() / 3;
          };
      }
+     
+     
+     
      
      // 생성자 함수 호출:
      const score1 = new Score(10, 9, 7);
      console.log(score1);
+     console.log(score1.sum());
+     console.log(score1.mean());
      
-     
+     const score2 = new Score(90,77,80);
+     console.log(score2);
+     console.log(score2.sum());
+     console.log(score2.mean());
      
      
      
