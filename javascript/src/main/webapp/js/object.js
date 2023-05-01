@@ -38,8 +38,63 @@
          console.log(key, ':', person[key]);
      }
      
-     // 객체(Object)에서 for-of 구문:
-     for (let key of person) {
-         console.log(key);
+     // 메서드를 갖는 객체:
+     const score = {
+        korean: 100,
+        english: 90,
+        math: 70,
+        sum: function () {
+            return this.korean + this.english + this.math;
+        },   
+        mean: function () {
+            return this.sum() / 3;
+        },
+     };
+     console.log(score);
+     console.log('sum = ', score.sum()); // 메서드 호출
+     console.log('mean =', score.mean());
+     
+     // 생성자 함수:
+     function Score(korean, english, math) {
+         // 필드
+         this.korean= korean;
+         this.english = english;
+         this.math = math;
+         
+         // 메서드
+         this.sum = function () {
+             return this.korean + this.english + this.math;
+         };
+         
+         this.mean = function () {
+             return sum() / 3;
+         };
      }
+     
+     // 생성자 함수 호출:
+     const score1 = new Score(10, 9, 7);
+     console.log(score1);
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
  }) 
