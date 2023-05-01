@@ -52,9 +52,15 @@
     console.log('timess', times);
      
      // 3. 배열 numbers의 원소들 중에서 홀수의 제곱을 원소로 갖는 배열을 만들고 출력
-     const oddsTimes = [];
+     let oddsTimes = [];
      for (let x of odds) {
          oddsTimes.push(x*x);
      }
      console.log('oddsTimes =', oddsTimes);
+     
+     oddsTimes = numbers.filter((x) => x % 2).map((x) => x ** 2);
+     console.log('oddsTimesss', oddsTimes);
+     
+     
+     
  });
