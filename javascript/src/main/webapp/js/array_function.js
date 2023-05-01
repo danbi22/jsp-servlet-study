@@ -60,7 +60,4 @@
      
      oddsTimes = numbers.filter((x) => x % 2).map((x) => x ** 2);
      console.log('oddsTimesss', oddsTimes);
-     
-     
-     
  });
