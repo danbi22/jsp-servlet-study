@@ -114,21 +114,38 @@ function calculate(x, y, operator){
 result = calculate(1,2,add);
 console.log('result =', result);
 
+result = calculate(1, 2, function (x, y){
+    return x - y;
+});
+console.log('result =', result);
 
+function increase(n) {
+    // return function (x) {x+n};
+    
+    // 함수 안에서 함수를 정의 - 내부 함수
+    function addN(x) {
+        return x + n;
+    }
+    
+    // 함수를 리턴
+    return addN;
+}
 
+const increaseTen = increase(10);
+console.log(increaseTen(1));
 
+const increaseOne = increase(1);
+console.log(increaseOne(1)); // ->  1 + 1
 
+// 화살표 함수(arrow function)
+// (파라미터, ...) => {실행코드; ...}
+// (파라미터, ...) => 리턴값
 
+const fnAdd = (x, y) => { return x + y; };
+console.log(fnAdd(3, 4));
 
-
-
-
-
-
-
-
-
-
+const fnSubtract = (x, y) => x - y;
+console.log(fnSubtract(3, 4));
 
 
 
