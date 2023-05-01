@@ -46,6 +46,24 @@
                 }
                 result.innerHTML += html3;
                 
+                // 구구단 2단부터 9단까지 while문으로 출력해보기
+                let html4 = '';
+                let dan = 2;
+                while(dan < 10) {
+                	let n = 1;
+                	while(n < 10){
+                		html4 += `${dan} x ${n} = ${dan * n} <br />`;
+                		n++;
+                	}
+                	<hr />;
+                	dan++;
+                }
+                result.innerHTML += html4
+                
+                
+                
+                
+                
                 </script>
 		</body>
 </html>
