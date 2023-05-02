@@ -22,7 +22,91 @@ document.addEventListener('DOMContentLoaded', function () {
     // id="btn2" 버튼에 'click' 이벤트 리스너를 등록
     const btn2 = document.getElementById('btn2');
     btn2.addEventListener('click', function () {
-        
-    })
+        // class="c1"인 요소들의 바탕색을 lime으로 변경
+        // getElementsByClassName는 HTMLCollection를 리턴
+        const divisions = document.getElementsByClassName('c1');
+        console.log(divisions);
+        for (let element of divisions){
+            console.log(element);
+        element.style.backgroundColor = 'lightgreen';
+        }
+    });
+    
+    // id="btn3"인 버튼에 'click' 이벤트 리스너를 등록:
+    const btn3 = document.getElementById('btn3');
+    btn3.addEventListener('click', function () {
+        // tag 이름이 div인 모든 요소의 바탕색을 변경
+        const divisions = document.getElementsByTagName('div');
+        for (let element of divisions){
+            element.style.backgroundColor = 'lightpink';
+        }
+    });
+    
+    // CSS selector(선택자) 문법을 argument로 사용하는 메서드:
+    // tagName, .className, #id, tagName.className#id
+    // parent descendent: 자손 요소 찾기
+    // parent > child: 자식 요소 찾기
+    // element:pseudo_selector: (예) button:hover, tr:nth-child(odd)
+    
+    // document.querySelector(selector): selector로 찾을 수 있는 "첫번째" 요소를 리턴
+    // document.querySelectorAll(selector): selector로 찾을 수 있는 "모든" 요소들의 collection을 리턴
+    // getElementBy(id, className)은 찾으려는게 무엇인지 이미 알고 있으나
+    // querySelector, querySelectorAll은 모르기에 (#, .)등을 명시해주어야함
+    const btn4 = document.querySelector('#btn4');
+    btn4.addEventListener('click', function () {
+        const division = document.querySelector('.c2');
+        console.log(division);
+        division.style.backgroundColor = 'lightblue';
+    });
+    
+    const btn5 = document.querySelector('#btn5');
+    console.log(btn5);
+    btn5.addEventListener('click', function () {
+        const divisions = document.querySelectorAll('.c2');
+        console.log(divisions);
+        for (let d of divisions){
+            d.style.backgroundColor = 'gray';
+        }
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 });
