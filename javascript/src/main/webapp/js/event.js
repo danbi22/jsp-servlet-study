@@ -47,8 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     
-    
-    
+    const username = document.getElementById('username');
+    const age = document.getElementById('age');
+    const result = document.getElementById('result');
+   
+    function update() {
+        const val1 = username.value;
+        const val2 = age.value;
+        const result1 = 
+    }
     
     
     

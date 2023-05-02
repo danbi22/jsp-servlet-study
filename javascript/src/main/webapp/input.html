@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<meta charset="UTF-8" />
+				<title>Insert title here</title>
+		</head>
+		<body>
+                <input type="text" id="input1">
+                <input type="text" id="input2">
+                <div id="result"></div>
+        <script>
+				const input1 = document.getElementById("input1");
+                const input2 = document.getElementById("input2");
+                const resultDiv = document.getElementById("result");
+                
+                function updateResult() {
+                  const value1 = input1.value;
+                  const value2 = input2.value;
+                  const result = value1 + " " + value2;
+                  resultDiv.textContent = result;
+                }
+                
+                input1.addEventListener("input", updateResult);
+                input2.addEventListener("input", updateResult);
+        </script>
+		</body>
+</html>
