@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnInput= document.querySelector('button#btnInput');
     const itemList= document.querySelector('ul#itemList');
     
-    btnInput.addEventListener('click', function () {
+    btnInput.addEventListener('click', function (e) {
+        console.log(e);
         // input에 입력된 값을 읽음
         const itemInputValue = itemInput.value;
         console.log(itemInputValue);
@@ -33,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // 'keydown'리스너: 키를 누르면 실행
     itemInput2.addEventListener('keydown', function(event) {
-        // console.log(event); -> event: KeyboardEvent 객체
-        // 
+         console.log(event); // -> event: KeyboardEvent 객체
+        // 모든 이벤트 핸들러 함수(콜백)은 이벤트 객체를 argument로 전달 받음.
         if (event.keyCode === 13) {
             const value = itemInput2.value;
             const item = `<li>${value}</li>`;
@@ -45,6 +46,40 @@ document.addEventListener('DOMContentLoaded', function () {
           itemInput2.focus();  
         }
     });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 });
