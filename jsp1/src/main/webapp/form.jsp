@@ -18,7 +18,7 @@
                              - 프로토콜://서버주소:포트/(context root포함)경로[/파일이름/]?질의문자열
                              - http://192.168.20.4:8081/jsp1/form-result.jsp?username=유다한
                  --%>
-				<form action="form-result.jsp" method="get">
+				<form action="form-result.jsp" method="post">
                         <input type="text" name="username" placeholder="이름 입력" required autofocus />
                         <input type="submit" value="전송" />
                 </form>

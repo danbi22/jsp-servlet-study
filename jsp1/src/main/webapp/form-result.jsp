@@ -14,6 +14,7 @@
                             - 파라미터값을 받을 변수 = request.getParameter("input에서 지어준 name");
                          request변수를 선언하지 않았는데 사용할 수 있다
                          WAS가 준것. JSP내장 객체
+                         
                 --%>
                 <%
                 String username = request.getParameter("username");
