@@ -28,12 +28,15 @@ public class FirstServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    // 클라이언트에서 GET 방식의 요청이 왔을 때, WAS(Web Application Server, Tomcat)가 호출하는 메서드
 	    // 파라미터 request: 클라리언트가 보낸 요청에 대한 정보를 가지고 있는 객체
 	    // 파라미터 response: WAS가 클라이언트로 보낼 응답을 작성하기 위해 필요한 기능들을 가지고 있는 객체
 	    // response(응답).getWriter(일종의 프린트메서드).append("Served at: ")(컨텍스트루트를 더해줌).append(request.getContextPath())(ex1을 더해줌);
 	    
+        System.out.println("request: "+request);
+        
 	    LocalDateTime curTime = LocalDateTime.now(); // 서버의 현재 시간
 	    
 		PrintWriter writer = response.getWriter();
@@ -49,12 +52,15 @@ public class FirstServlet extends HttpServlet {
     		    .append(curTime.toString())
     		    .append(      "</h2>")
     		    .append(  "</body>")
+    		    
+    		    
 		        .append("</html>");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+    @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    // 클라이언트에서 POST 방식의 요청이 왔을 때, WAS(Web Application Server, Tomcat)가 호출하는 메서드
 		doGet(request, response);
