@@ -9,7 +9,12 @@
 		</head>
 		<body>
                 <jsp:include page="header.jsp"></jsp:include>
-        
+                <%-- 
+                        * <%@ include %> 지시문과 비슷하게 다른 JSP의 내용을 포함시킴
+                        * jspf 확장자를 사용할 수 없고, jsp만 사용
+                        * include하는 JSP
+                
+                 --%>
         
 				<h1>JSP Action Tag</h1>
                 <%-- 
@@ -54,9 +59,24 @@
                         c2.name: <jsp:getProperty property="name" name="c2"/>
                  </p>
                  
+                 <%
+                 Contact c3 = new Contact(1, "다한", "010-0000-0000", "다한@gmail.com");
+                 %>
+                 <jsp:useBean id="c4" class="com.itwill.jsp1.model.Contact">
+                        <jsp:setProperty name="c4" property="id" value="1" />
+                        <jsp:setProperty name="c4" property="name" value="1" />
+                        <jsp:setProperty name="c4" property="phone" value="1" />
+                        <jsp:setProperty name="c4" property="email" value="1" />
+                 </jsp:useBean>
                  
-                 
-                 
+                 <p>
+                        id: <jsp:getProperty property="id" name="c4"/>
+                        <br />
+                        name: <jsp:getProperty property="name" name="c4"/>
+                        <br />
+                        phone: <jsp:getProperty property="phone" name="c4"/>
+                        <br />
+                 </p>
                                   
 		</body>
 </html>
