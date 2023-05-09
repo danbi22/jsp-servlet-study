@@ -61,5 +61,49 @@
                 <h3>아이디: 
                         <span id="span2">${ param.username }</span>
                 </h3>
+                
+                <hr />
+                
+                <c:choose>
+                        <c:when test="${ param.username == 'admin' }">
+                                <h2>관리자 페이지</h2>
+                        </c:when>
+                        <c:otherwise>
+                                <h2>일반 사용자 페이지</h2>
+                        </c:otherwise>
+                </c:choose>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 		</body>
 </html>
