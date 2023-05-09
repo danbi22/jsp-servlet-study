@@ -88,10 +88,10 @@
                                 <tbody>
                                         <c:forEach items="${ contacts }" var="c">
                                                 <tr>
-                                                        <td>${ c.getId() }</td>
-                                                        <td>${ c.getName() }</td>
-                                                        <td>${ c.getPhone() }</td>
-                                                        <td>${ c.getEmail() }</td>
+                                                        <td>${ c.id }</td>
+                                                        <td>${ c.name }</td>
+                                                        <td>${ c.phone }</td>
+                                                        <td>${ c.email }</td>
                                                 </tr>
                                         </c:forEach>
                                 </tbody>
