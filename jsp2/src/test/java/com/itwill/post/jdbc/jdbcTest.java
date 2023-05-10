@@ -5,12 +5,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import com.itwill.post.model.Post;
 
@@ -22,6 +26,7 @@ import oracle.jdbc.OracleDriver;
 // JDBC(Java Database Connectivity) 테스트 - ojdbc11 라이브러리 동작 여부 테스트.
 // main 메서드를 만들지 않고, 테스트 메서드를 작성하면
 // junit-jupiter-engine에서 테스트 메서드를 실행함. 
+@TestMethodOrder(OrderAnnotation.class) //-> 테스트 메서드 실행 순서를 애너테이션으로 설정함.
 public class jdbcTest {
     
     // Oracle 데이터베이스 접속 주소
@@ -44,6 +49,7 @@ public class jdbcTest {
     public static final String SQL_SELECT_ALL = "select * from posts";
     
     @Test
+    @Order(2)
     public void testSelect() throws SQLException {
         // 1. JDBC 라이브러리를 Drivermaneger에 등록
         DriverManager.registerDriver(new OracleDriver());
@@ -70,13 +76,13 @@ public class jdbcTest {
             String content = rs.getString("content");
             String author = rs.getString("author");
             LocalDateTime createdTime = rs.getTimestamp("created_time").toLocalDateTime();
-            LocalDateTime modifiedTime = rs.getTimestamp("created_time").toLocalDateTime();
+            LocalDateTime modifiedTime = rs.getTimestamp("modified_time").toLocalDateTime();
             
             Post post = new Post(id, title, content, author, createdTime, modifiedTime);
             System.out.println(post);
             posts.add(post);
         }
-        Assertions.assertEquals(1, posts.size());
+        Assertions.assertEquals(3, posts.size());
         // 데이터베이스와 연결된 접속을 해제
         rs.close();
         stmt.close();
@@ -84,9 +90,29 @@ public class jdbcTest {
         System.out.println("연결 해제 성공");
     }
     
+    public static final String SQL_INSERT = "insert into posts (title, content, author, modified_time) values (?,?,?,?)";
+    
     @Test // JUnit 엔진에서 호출할 테스트 메서드
-    public void testInsert() {
-        // Driver
+    @Order(1)
+    public void testInsert() throws SQLException {
+        // Driver 등록 -> Connection -> PreparedStatement -> execute -> 결과처리 -> 리소스 해제
+        DriverManager.registerDriver(new OracleDriver());
+        Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        
+        PreparedStatement stmt = conn.prepareStatement(SQL_INSERT);
+        stmt.setString(1, "제목");
+        stmt.setString(2, "내용");
+        stmt.setString(3, "다한");
+        LocalDateTime now = LocalDateTime.now();
+        Timestamp tnow = Timestamp.valueOf(now);
+        stmt.setTimestamp(4, tnow);
+        
+        int result = stmt.executeUpdate();
+        Assertions.assertEquals(1, result);
+        
+        stmt.close();
+        conn.close();
+        System.out.println("연결 해제 성공");
     }
     
 }
