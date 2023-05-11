@@ -26,5 +26,22 @@
                                 </li>
                         </ul>
                 </nav>
+                <main>
+                        <c:url value="/post/create" var="postCreate"></c:url>
+                        <form action="${ postCreate }" method="post">
+                                <div>
+                                        <input type="text" name="title" placeholder="제목을 입력해주세요" required autofocus />
+                                </div>
+                                <div>
+                                        <textarea rows="5" cols="80" name="content" placeholder="내용을 입력해주세요" required></textarea>
+                                </div>
+                                <div>
+                                        <input type="text" name="author" placeholder="아이디를 입력해주세요" required />
+                                </div>
+                                <div>
+                                        <input type="submit" value="직성완료" />
+                                </div>
+                        </form>
+                </main>
 		</body>
 </html>
