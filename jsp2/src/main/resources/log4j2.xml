@@ -8,7 +8,7 @@
         </Appenders>
         <Loggers>
                 <!-- log4j2 로그 레벨: all < trace < debug < info < warn < error < fatal -->
-                <Root level="INFO" additivity="false"> 
+                <Root level="INFO" additivity="false">
                         <AppenderRef ref="out" />
                 </Root>
         </Loggers>
