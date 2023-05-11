@@ -6,6 +6,8 @@
 		<head>
 				<meta charset="UTF-8">
 				<title>Insert title here</title>
+                <style>
+                </style>
 		</head>
 		<body>
                 <header>
@@ -27,7 +29,34 @@
                                 </li>
                         </ul>
                 </nav>
-
+                
+                <main>
+                        <table>
+                                <thead>
+                                        <tr>
+                                                <th>번호</th>
+                                                <th>제목</th>
+                                                <th>작성자</th>
+                                                <th>수정 시간</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <c:forEach var="posts" items="${ posts }">
+                                                <tr>
+                                                        <td>${ posts.id }</td>
+                                                        <td>
+                                                                <c:url value="/post/detail" var="postDetail">
+                                                                        <c:param name="id" value="${ posts.id }"></c:param>
+                                                                </c:url>
+                                                                <a href="${ postDetail }">${ posts.title }</a>
+                                                        </td>
+                                                        <td>${ posts.author }</td>
+                                                        <td>${ posts.modifiedTime }</td>
+                                                </tr>
+                                        </c:forEach>
+                                </tbody>
+                        </table>
+                </main>
 		</body>
 </html>
 
