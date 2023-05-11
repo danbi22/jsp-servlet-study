@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+        <Appenders>
+                <!-- INFO level 이상의 로그들을 콘솔창에 출력하겠다 -->
+                <Console name="out" target="SYSTEM_OUT">
+                        <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5p %c - %m%n"/>
+                </Console>
+        </Appenders>
+        <Loggers>
+                <!-- log4j2 로그 레벨: all < trace < debug < info < warn < error < fatal -->
+                <Root level="INFO"> 
+                        <AppenderRef ref="out" />
+                </Root>
+        </Loggers>
+</Configuration>
