@@ -118,7 +118,7 @@ public class PostDao {
 
     private static final String SQL_SELECT_BY_ID = "select * from posts where id=?";
     
-    public Post selectById(int id) {
+    public Post selectById(long id) {
         Post post = null;
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -127,7 +127,7 @@ public class PostDao {
         try {
             conn = ds.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT_BY_ID);
-            stmt.setInt(1, id);
+            stmt.setLong(1, id);
             rs = stmt.executeQuery();
             
             while (rs.next()) {
