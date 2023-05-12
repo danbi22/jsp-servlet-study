@@ -37,4 +37,10 @@ public class PostService {
     public int create(Post post) {
         log.info("create({})", post);
         return postDao.insert(post);
+    }
+
+    public Post readAt(int id) {
+        log.info("getPostById({})", id);
+        
+        return postDao.selectById(id);
     }}
