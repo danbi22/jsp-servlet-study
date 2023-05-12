@@ -8,31 +8,45 @@
 				<title>세부목록</title>
 		</head>
 		<body>
-                <table>
-                        <tr>
-                                <th>글 번호</th>
-                                <td>${ post.id }</td>
-                                <th>수정 시간</th>
-                                <td>${ post.modifiedTime }</td>
-                        </tr>
-                        <tr>
-                                <th>제목</th>
-                                <td>${ post.title }</td>
-                        </tr>
-                        <tr>
-                                <th>내용</th>
-                                <td>${ post.content }</td>
-                        </tr>
-                        <tr>
-                                <th>작성자</th>
-                                <td>${ post.author }</td>
-                        </tr>
-                </table>
 				<nav>
-                        <c:url var="postList" value="/post"></c:url>
-                        <button>
-                                <a href="${ postList }">목록으로 돌아가기</a>
-                        </button>
+                        <ul>
+                                <li>
+                                        <c:url var="postList" value="/post"></c:url>
+                                            <a href="${ postList }">목록으로 돌아가기</a>
+                                </li>
+                                <li>
+                                        <c:url var="postMain" value="/"></c:url>
+                                                <a href="${ postMain }">메인으로 돌아가기</a>
+                                </li>
+                                <li>
+                                        <c:url value="/post/modify" var="postModify">
+                                                <c:param name="id" value="${ post.id }"></c:param>
+                                        </c:url>
+                                        <a href="${ postModify }">포스트 수정</a>
+                                </li>
+                        </ul>
                 </nav>
+                <main>
+                <form>
+                        <div>
+                                <input type="text" value="${ post.id }" readonly />
+                        </div>
+                        <div>
+                                <input type="text" value="${ post.title }" readonly />
+                        </div>
+                        <div>
+                                <textarea rows="5" cols="80" readonly>${ post.content }</textarea>
+                        </div>
+                        <div>
+                                <input type="text" value="${ post.author }" readonly />
+                        </div>
+                        <div>
+                                <input type="text" value="${ post.createdTime }" readonly />
+                        </div>
+                        <div>
+                                <input type="text" value="${ post.modifiedTime }" readonly />
+                        </div>
+                </form>
+        </main>
 		</body>
 </html>
