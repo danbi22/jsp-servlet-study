@@ -33,7 +33,7 @@ public class PostDetailController extends HttpServlet {
 	    // 목록 페이지에서 선택된 열의 id를 가져옴
 	    int id = Integer.parseInt(request.getParameter("id"));
 	    
-	    // 선택된 열의 id를 가지고 해당 post를 찾음
+	    // 요청 URL의 쿼리스트링에 포함된 요청 파라미터 id(포스트 번호, PK) 값을 찾음
 	    Post post = postService.readAt(id); 
 	    log.info("post{}", post);
 	    
