@@ -26,27 +26,33 @@
                                 </li>
                         </ul>
                 </nav>
-                <main>
-                <form>
-                        <div>
-                                <input type="text" value="${ post.id }" readonly />
-                        </div>
-                        <div>
-                                <input type="text" value="${ post.title }" readonly />
-                        </div>
-                        <div>
-                                <textarea rows="5" cols="80" readonly>${ post.content }</textarea>
-                        </div>
-                        <div>
-                                <input type="text" value="${ post.author }" readonly />
-                        </div>
-                        <div>
-                                <input type="text" value="${ post.createdTime }" readonly />
-                        </div>
-                        <div>
-                                <input type="text" value="${ post.modifiedTime }" readonly />
-                        </div>
-                </form>
-        </main>
+                     <main>
+                        <form id="postModifyForm" name="postModifyForm">
+                                <div>
+                                        <input id="id" name="id" type="text" value="${ post.id }" readonly />
+                                </div>
+                                <div>
+                                        <input id="title" name="title" type="text" value="${ post.title }"  />
+                                </div>
+                                <div>
+                                        <textarea id="content" name="content" rows="5" cols="80" >${ post.content }</textarea>
+                                </div>
+                                <div>
+                                        <input type="text" value="${ post.author }" readonly />
+                                </div>
+                                <div>
+                                        <input type="text" value="${ post.createdTime }" readonly />
+                                </div>
+                                <div>
+                                        <input type="text" value="${ post.modifiedTime }" readonly />
+                                </div>
+                                <div>
+                                        <button id="btnUpdate">수정완료</button>
+                                        <button id="btnDelete">삭제</button>
+                                </div>
+                        </form>
+                </main>
+                
+                <script src="../js/post-modify.js"></script>
 		</body>
 </html>

@@ -56,6 +56,17 @@
                                         </c:forEach>
                                 </tbody>
                         </table>
+                        <c:url value="/post/serch" var="search"></c:url>
+                        <form action="${search}">
+                                <select name="category">
+                                        <option value="optT">제목</option>
+                                        <option value="optC">내용</option>
+                                        <option value="optTC">제목 + 내용</option>
+                                        <option value="optA">작성자</option>
+                                </select>
+                                <input type="text" name="keyword" placeholder="검색어" required autofocus />
+                                <input type="submit" value="검색" />
+                        </form>
                 </main>
 		</body>
 </html>

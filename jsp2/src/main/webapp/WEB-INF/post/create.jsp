@@ -39,7 +39,7 @@
                                         <input type="text" name="author" placeholder="아이디를 입력해주세요" required />
                                 </div>
                                 <div>
-                                        <input type="submit" value="직성완료" />
+                                        <input type="submit" value="작성완료" />
                                 </div>
                         </form>
                 </main>

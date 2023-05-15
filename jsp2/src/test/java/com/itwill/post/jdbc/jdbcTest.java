@@ -30,7 +30,7 @@ import oracle.jdbc.OracleDriver;
 public class jdbcTest {
     
     // Oracle 데이터베이스 접속 주소
-    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    private static final String URL = "jdbc:oracle:thin:192.168.20.31:1521:xe";
     // 데이터베이스 접속 계정
     private static final String USER = "scott";
     // 데이터베이스 접속 비밀번호

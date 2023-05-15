@@ -16,7 +16,7 @@ public class HikariDataSourceUtil {
         
         // CP(Data Source)을 생성하기 위한 설정들:
         config.setDriverClassName("oracle.jdbc.OracleDriver");
-        config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
+        config.setJdbcUrl("jdbc:oracle:thin:@192.168.20.31:1521:xe");
         config.setUsername("scott");
         config.setPassword("tiger");
         

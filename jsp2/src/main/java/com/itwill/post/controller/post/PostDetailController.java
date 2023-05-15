@@ -22,7 +22,7 @@ public class PostDetailController extends HttpServlet {
 	
 	private static Logger log = LoggerFactory.getLogger(PostDetailController.class);
 	
-	private static PostService postService = PostService.getPostService();
+	private final PostService postService = PostService.getPostService();
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

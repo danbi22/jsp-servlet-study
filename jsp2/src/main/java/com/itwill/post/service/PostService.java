@@ -39,8 +39,20 @@ public class PostService {
         return postDao.insert(post);
     }
 
-    public Post readAt(int id) {
+    public Post readAt(long id) {
         log.info("getPostById({})", id);
         
         return postDao.selectById(id);
+    }
+
+    public int delete(long id) {
+        log.info("delete({})", id);
+        
+        return postDao.delete(id);
+    }
+
+    public int update(Post post) {
+        log.info("update");
+        
+        return postDao.update(post);
     }}

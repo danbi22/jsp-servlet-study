@@ -147,4 +147,62 @@ public class PostDao {
         }
         return post;
     }
+
+    private static final String SQL_DELETE_BY_ID = "delete from posts where id=?";
+    
+    public int delete(long id) {
+        log.info("delete(id={})", id);
+        log.info(SQL_DELETE_BY_ID);
+        int result = 0;
+        
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        
+        try {
+            conn = ds.getConnection();
+            stmt = conn.prepareStatement(SQL_DELETE_BY_ID);
+            stmt.setLong(1, id);
+            result = stmt.executeUpdate();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+
+    private static final String SQL_UPDATE_BY_ID = "update posts set title=? content=? where id=?";
+    
+    public int update(Post post) {
+        int result = 0;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        
+        try {
+            conn = ds.getConnection();
+            stmt = conn.prepareStatement(SQL_UPDATE_BY_ID);
+            stmt.setString(1, post.getTitle());
+            stmt.setString(2, post.getContent());
+            stmt.setLong(3, post.getId());
+            result = stmt.executeUpdate();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        
+        return 0;
+    }
 }

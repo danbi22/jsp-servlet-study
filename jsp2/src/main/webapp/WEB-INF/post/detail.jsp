@@ -27,15 +27,15 @@
                         </ul>
                 </nav>
                 <main>
-                <form>
+                <form id="postModifyForm">
                         <div>
-                                <input type="text" value="${ post.id }" readonly />
+                                <input id="id" name="id" type="text" value="${ post.id }" readonly />
                         </div>
                         <div>
-                                <input type="text" value="${ post.title }" readonly />
+                                <input id="title" name="title" type="text" value="${ post.title }" autofocus />
                         </div>
                         <div>
-                                <textarea rows="5" cols="80" readonly>${ post.content }</textarea>
+                                <textarea id="content" name="content" rows="5" cols="80" >${ post.content }</textarea>
                         </div>
                         <div>
                                 <input type="text" value="${ post.author }" readonly />
@@ -46,7 +46,13 @@
                         <div>
                                 <input type="text" value="${ post.modifiedTime }" readonly />
                         </div>
+                        <div>
+                                <c:url var="" value=""></c:url>
+                                <button id="btnUpdate">수정완료</button>
+                                <button id="btnDelete">삭제</button>
+                        </div>
                 </form>
+                
         </main>
 		</body>
 </html>
